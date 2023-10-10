@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+	  <groups>
+		  <define name="Weeklybuild">
+			  <include name="login"></include>
+			  <include name="credentials"></include>
+		  </define> <!--here this is meta group i.e. group of group which contains tests to be run-->
+		 
+		  <run><!--here group will be executed which we give name-->
+			  <include name="Weeklybuild"></include>
+		  </run>
+	  </groups>
+	  <classes>
+		  <class name="com.group.test.Program1"></class>
+		  <class name="com.group.test.Program2"></class>
+		  <class name="com.group.test.Program3"></class>
+	  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
